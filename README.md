@@ -30,3 +30,11 @@
 - register shortcut
 	- Settings > Keyboard > Keyboard Shortcuts
 	- Command `~/toggle_touchpad`
+
+## Saving Battery
+
+- install tlp
+	```bash
+	$ sudo apt install tlp tlp-rdw
+	$ sudo tlp start
+	```
