@@ -38,3 +38,36 @@
 	$ sudo apt install tlp tlp-rdw
 	$ sudo tlp start
 	```
+	
+## Proxy
+
+- docker proxy
+	- docker application proxy setting
+		- `/etc/systemd/system/docker.service.d/proxy.conf` file
+		
+			```bash
+			[Service]
+			Environment="HTTP_PROXY=http://proxy.com:8080/"
+			Environment="HTTPS_PROXY=https://proxy.com:8080/"
+			Environment="NO_PROXY=localhost,127.0.0.1"
+			```
+		- restart docker service
+			```bash
+			$ sudo systemctl start docker
+			$ sudo service docker start
+			```
+	- docker client(instances) proxy setting
+		- `~/.docker/config.json`
+		
+			```bash
+			{
+				"proxies": {
+					"default": {
+						"httpProxy": "http://proxy.com:8080/",
+						"httpsProxy": "https://proxy.com:8080/",
+						"noProxy": "*.example.com,localhost,127.0.0.1"
+					}
+				}
+			}
+			```
+		
