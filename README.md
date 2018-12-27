@@ -10,6 +10,28 @@
 	- solution
 		1. open `/etc/inputrc`
 		2. uncomment `set bell-style none` 
+		
+## korean keyboard setting
+- install `fcitx-hangul`
+  ```bash
+  $ sudo apt-get install fcitx-hangul
+  ```
+
+- install laguage support for hangul
+  - System Settings > Language Support
+  - select install button on popup
+  - wait installing
+
+- keyboard input method system
+  - change 'IBus' to 'fcitx'
+
+- Reboot
+
+- On Right Top, click tray icon shaped keyboard
+  - click > configure > + button
+  - uncheck 'Only Show Current Language'
+  - search 'Hangul'
+  - add 'Hangul'
 
 ## Touchpad shortcut with linux
 
