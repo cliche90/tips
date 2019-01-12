@@ -21,6 +21,56 @@
 		3. install latest kernel
 		4. reboot
 		
+## setup zsh
+- install zsh
+  ```bash
+  $ sudo apt update
+  $ sudo apt install -y zsh
+  $ zsh --version
+  ```
+- making zsh the default shell
+  ```bash
+  $ whereis zsh
+  # zsh: /usr/bin/zsh ~~~
+  $ sudo usermod -s /usr/bin/zsh $(whoami)
+  ```
+- reboot
+- open new terminal & press `2`
+- install powerline/powerline-fonts
+  ```bash
+  $ sudo apt install -y powerline fonts-powerline
+  ```
+- install zsh powerlinelevel9k theme
+  ```bash
+  $ sudo apt install zsh-theme-powerlevel9k
+  $ echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
+  ```
+- install zsh syntax highligting
+  ```bash
+  $ sudo apt install zsh-syntax-highlighting
+  $ echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+  ```
+- reopen terminal
+- install git
+  ```bash
+  $ sudo apt install -y git
+  ```
+- install oh-my-zsh
+  ```bash
+  $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  ```
+- enable powerlevel9k
+  ```bash
+  ~ echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
+  ~ echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+  ```
+- test git
+  ```bash
+  $ mkdir git-test
+  $ cd git-test
+  $ git init
+  ```
+
 ## korean keyboard setting
 - install `fcitx-hangul`
   ```bash
