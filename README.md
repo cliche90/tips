@@ -18,7 +18,7 @@
 			```bash
 			$ sudo utuu-gtk
 			```
-		3. install current kernel
+		3. install latest kernel
 		4. reboot
 		
 ## korean keyboard setting
