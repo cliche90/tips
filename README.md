@@ -16,7 +16,7 @@
 			```
 		2. run `ukuu-gtk`
 			```bash
-			$ sudo utuu-gtk
+			$ sudo ukuu-gtk
 			```
 		3. install latest kernel
 		4. reboot
