@@ -4,12 +4,22 @@
 
 ## Troubleshooting
 
-- loud "beep" during reboot/shutdown
+- loud "beep" during reboot/shutdown (on LG gram)
 	- on linux
 	- on laptop
 	- solution
-		1. open `/etc/inputrc`
-		2. uncomment `set bell-style none` 
+		1. install `ukuu`
+			```bash
+			$ sudo apt-add-repository -y ppa:teejee2008/ppa
+			$ sudo apt update
+			$ sudo apt install ukuu
+			```
+		2. run `ukuu-gtk`
+			```bash
+			$ sudo utuu-gtk
+			```
+		3. install current kernel
+		4. reboot
 		
 ## korean keyboard setting
 - install `fcitx-hangul`
