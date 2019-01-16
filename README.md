@@ -74,7 +74,7 @@
 ## korean keyboard setting
 - install `fcitx-hangul`
   ```bash
-  $ sudo apt-get install fcitx-hangul
+  $ sudo apt install fcitx-hangul
   ```
 
 - install laguage support for hangul
