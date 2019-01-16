@@ -1,0 +1,155 @@
+# Tips
+
+> Just Tips for development and env settings
+
+## Troubleshooting
+
+- loud "beep" during reboot/shutdown (on LG gram)
+	- on linux
+	- on laptop
+	- solution
+		1. install `ukuu`
+			```bash
+			$ sudo apt-add-repository -y ppa:teejee2008/ppa
+			$ sudo apt update
+			$ sudo apt install ukuu
+			```
+		2. run `ukuu-gtk`
+			```bash
+			$ sudo ukuu-gtk
+			```
+		3. install latest kernel
+		4. reboot
+		
+## setup zsh/theme
+- install `zsh`
+  ```bash
+  $ sudo apt update
+  $ sudo apt install -y zsh
+  $ zsh --version
+  ```
+- making `zsh` the default shell
+  ```bash
+  $ whereis zsh
+  # zsh: /usr/bin/zsh ~~~
+  $ sudo usermod -s /usr/bin/zsh $(whoami)
+  ```
+- reboot
+- open new terminal & press `2`
+- install `powerline`/`powerline-fonts`
+  ```bash
+  $ sudo apt install -y powerline fonts-powerline
+  ```
+- install `zsh-theme-powerlinelevel9k` theme
+  ```bash
+  $ sudo apt install zsh-theme-powerlevel9k
+  $ echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
+  ```
+- install `zsh-syntax-highligting`
+  ```bash
+  $ sudo apt install zsh-syntax-highlighting
+  $ echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+  ```
+- reopen terminal
+- install git
+  ```bash
+  $ sudo apt install -y git
+  ```
+- install `oh-my-zsh`
+  ```bash
+  $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  ```
+- enable `powerlevel9k`
+  ```bash
+  ~ echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
+  ~ echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+  ```
+- test git
+  ```bash
+  $ mkdir git-test
+  $ cd git-test
+  $ git init
+  ```
+
+## korean keyboard setting
+- install `fcitx-hangul`
+  ```bash
+  $ sudo apt install fcitx-hangul
+  ```
+
+- install laguage support for hangul
+  - System Settings > Language Support
+  - select install button on popup
+  - wait installing
+
+- keyboard input method system
+  - change 'IBus' to 'fcitx'
+
+- Reboot
+
+- On Right Top, click tray icon shaped keyboard
+  - click > configure > + button
+  - uncheck 'Only Show Current Language'
+  - search 'Hangul'
+  - add 'Hangul'
+
+## Touchpad shortcut with linux
+
+- clone toggle-touchpad-with-linux repo.
+	```bash
+	$ git clone https://github.com/cliche90/toggle-touchpad-with-linux
+	```
+- move `toggle_touchpad` file to somewhere
+	```bash
+	$ cd toggle-touchpad-with-linux
+	$ mkdir ~/utils
+	$ mv toggle_touchpad ~/utils
+	```
+- assign right to excute `toggle_touchpad` file
+	```bash
+	$ sudo chmod +x toggle_touchpad
+	```
+- register shortcut
+	- Settings > Keyboard > Keyboard Shortcuts
+	- Command `~/toggle_touchpad`
+
+## Saving Battery
+
+- install tlp
+	```bash
+	$ sudo apt install tlp tlp-rdw
+	$ sudo tlp start
+	```
+	
+## Proxy
+
+- docker proxy
+	- docker application proxy setting
+		- `/etc/systemd/system/docker.service.d/proxy.conf` file
+		
+			```bash
+			[Service]
+			Environment="HTTP_PROXY=http://proxy.com:8080/"
+			Environment="HTTPS_PROXY=https://proxy.com:8080/"
+			Environment="NO_PROXY=localhost,127.0.0.1"
+			```
+		- restart docker service
+			```bash
+			$ sudo systemctl start docker
+			$ sudo service docker start
+			```
+	- docker instances proxy setting
+		- `~/.docker/config.json` file
+		
+			```bash
+			{
+				"proxies": {
+					"default": {
+						"httpProxy": "http://proxy.com:8080/",
+						"httpsProxy": "https://proxy.com:8080/",
+						"noProxy": "*.example.com,localhost,127.0.0.1"
+					}
+				}
+			}
+			```
+		
