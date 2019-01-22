@@ -43,12 +43,10 @@
 - `zsh-theme-powerlinelevel9k` 테마를 설치합니다.
   ```bash
   $ sudo apt install zsh-theme-powerlevel9k
-  $ echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
   ```
 - `zsh-syntax-highligting`을 설치합니다.
   ```bash
   $ sudo apt install zsh-syntax-highlighting
-  $ echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
   ```
 - 다시 터미널을 엽니다.
 - (설치되어있지 않다면) `git`을 설치합니다.
